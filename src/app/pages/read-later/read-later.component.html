@@ -11,6 +11,9 @@
             <h5 class="card-title" [routerLink]="['/view-news', item.title]">
               {{ item.title }}
             </h5>
+            <p class="card-text my-3 text-muted">
+              {{ item.publishedAt | date : "medium" }}
+            </p>
           </div>
         </div>
         <div class="col-md-4">
