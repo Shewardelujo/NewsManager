@@ -25,6 +25,13 @@ export class NavigationComponent implements OnInit {
       this.searchData = data.articles;
       this.apiState.setSearchResults(data.articles);
 
+      const totalList = localStorage.getItem('totalList');
+      if (totalList != null) {
+        const list = JSON.parse(totalList);
+        let updatedTotalList = [...list, ...data.articles];
+        localStorage.setItem('totalList', JSON.stringify(updatedTotalList));
+      }
+
       this.router.navigate(['/search-results']);
     });
   }
