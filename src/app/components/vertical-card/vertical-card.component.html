@@ -1,0 +1,15 @@
+<div class="card h-100">
+  <img src="{{ item.urlToImage }}" class="card-img-top" alt="..." />
+  <div class="card-body">
+    <h5 class="card-title" [routerLink]="['/view-news', item.title]">
+      {{ item.title }}
+    </h5>
+    <p class="card-text">{{ item.title }}</p>
+    <p class="card-text my-3 text-muted">
+      {{ item.publishedAt | date : "medium" }}
+    </p>
+  </div>
+  <div class="card-footer bg-white border-top-0">
+    <a class="btn btn-primary mb-2" (click)="storeNews(item)">Read Later </a>
+  </div>
+</div>

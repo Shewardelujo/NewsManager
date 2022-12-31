@@ -1,0 +1,112 @@
+<!-- Top Section, contains section 1 and section 2 -->
+
+<!-- Top Section -->
+<div class="col-12 mt-3 px-5 d-md-flex justify-content-md-between">
+  <!-- Section 1 beginning -->
+
+  <div class="col-xs-12 col-md-8">
+    <h5 class="mt-4 mb-3">Top Headlines</h5>
+
+    <!-- First item -->
+
+    <div class="card mb-3 col-12">
+      <div class="row g-0">
+        <div class="col-md-5">
+          <div class="card-body">
+            <h5
+              class="card-title"
+              [routerLink]="['/view-news', firstData.title]"
+            >
+              {{ firstData.title }}
+            </h5>
+            <p class="card-text">
+              {{ firstData.description }}
+            </p>
+
+            <p class="card-text my-3 text-muted">
+              {{ firstData.publishedAt | date : "medium" }}
+            </p>
+
+            <a class="btn btn-primary" (click)="storeNews(firstData)"
+              >Read Later
+            </a>
+          </div>
+        </div>
+        <div class="col-md-7">
+          <img
+            src="{{ firstData.urlToImage }}"
+            class="img-fluid rounded-end"
+            alt="..."
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- other items -->
+    <div class="row g-2">
+      <div *ngFor="let item of Data" class="col-md-4">
+        <app-vertical-card [item]="item"></app-vertical-card>
+      </div>
+    </div>
+  </div>
+  <!-- Section 1 end -->
+
+  <!-- Section 2 beginning -->
+  <div class="col-xs-12 col-md-3">
+    <h5 class="mt-4 mb-3">Bitcoin News</h5>
+    <!-- <div *ngFor="let item of Data"> -->
+    <div *ngFor="let item of bitData">
+      <app-horizontal-card [item]="item"></app-horizontal-card>
+    </div>
+  </div>
+  <!-- Section 2 end -->
+</div>
+
+<!-- Section 3 -->
+<div class="col-12 mt-3 px-5">
+  <h5 class="mt-4 mb-3 col-12">Categories</h5>
+  <div class="row">
+    <div class="col-md-4 mr-2">
+      <h5>Science</h5>
+      <!-- <div *ngFor="let item of Data"> -->
+      <div *ngFor="let item of scienceData">
+        <app-horizontal-card [item]="item"></app-horizontal-card>
+      </div>
+    </div>
+    <div class="col-md-4 mr-2">
+      <h5>Technology</h5>
+      <!-- <div *ngFor="let item of Data"> -->
+      <div *ngFor="let item of technologyData">
+        <app-horizontal-card [item]="item"></app-horizontal-card>
+      </div>
+    </div>
+    <div class="col-md-4 mr-2">
+      <h5>Business</h5>
+      <!-- <div *ngFor="let item of Data"> -->
+      <div *ngFor="let item of businessData">
+        <app-horizontal-card [item]="item"></app-horizontal-card>
+      </div>
+    </div>
+    <div class="col-md-4 mr-2">
+      <h5>Sports</h5>
+      <!-- <div *ngFor="let item of Data"> -->
+      <div *ngFor="let item of sportsData">
+        <app-horizontal-card [item]="item"></app-horizontal-card>
+      </div>
+    </div>
+    <div class="col-md-4 mr-2">
+      <h5>Entertainment</h5>
+      <!-- <div *ngFor="let item of Data"> -->
+      <div *ngFor="let item of entertainmentData">
+        <app-horizontal-card [item]="item"></app-horizontal-card>
+      </div>
+    </div>
+    <div class="col-md-4 mr-2">
+      <h5>Health</h5>
+      <!-- <div *ngFor="let item of Data"> -->
+      <div *ngFor="let item of healthData">
+        <app-horizontal-card [item]="item"></app-horizontal-card>
+      </div>
+    </div>
+  </div>
+</div>

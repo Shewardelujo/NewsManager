@@ -1,0 +1,12 @@
+<div class="container mt-5">
+  <h4>{{ singleNews.title }}</h4>
+  <p class="my-3 text-muted">{{ singleNews.publishedAt | date : "medium" }}</p>
+  <img
+    src="{{ singleNews.urlToImage }}"
+    alt="{{ singleNews.title }}"
+    class="my-5 urlToImage image-fluid"
+  />
+  <p class="mb-5">
+    {{ singleNews.description }}
+  </p>
+</div>

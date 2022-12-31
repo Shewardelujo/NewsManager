@@ -1,0 +1,9 @@
+<div class="col-12 container">
+  <h5 class="mt-4 mb-3">Old News</h5>
+  <div *ngFor="let item of oldList" class="specifics">
+    <app-horizontal-page-card
+      [item]="item"
+      class="mb-4"
+    ></app-horizontal-page-card>
+  </div>
+</div>

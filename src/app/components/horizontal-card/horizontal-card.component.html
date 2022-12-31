@@ -1,0 +1,22 @@
+<div class="card mb-3">
+  <div class="row g-0">
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title" [routerLink]="['/view-news', item.title]">
+          {{ item.title | truncate }}
+        </h5>
+        <p class="card-text my-3 text-muted">
+          {{ item.publishedAt | date : "short" }}
+        </p>
+        <a class="btn btn-primary" (click)="storeNews(item)">Read Later </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <img
+        src="{{ item.urlToImage }}"
+        class="img-fluid rounded-start"
+        alt="..."
+      />
+    </div>
+  </div>
+</div>

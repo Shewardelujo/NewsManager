@@ -1,0 +1,13 @@
+<div class="col-12 container">
+  <h5 class="mt-4 mb-3" *ngIf="dData.length !== 0">Search Results</h5>
+  <div *ngIf="dData.length == 0" class="my-5">
+    <h4 class="justfy-content-center">No Search Made</h4>
+  </div>
+  <div *ngFor="let item of dData" class="specifics">
+    <app-horizontal-page-card
+      [item]="item"
+      class="mb-4"
+      [routerLink]="['/view-news', item.title]"
+    ></app-horizontal-page-card>
+  </div>
+</div>

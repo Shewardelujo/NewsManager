@@ -1,0 +1,26 @@
+<div class="col-12 container">
+  <h5 class="mt-4 mb-3" *ngIf="dData.length !== 0">Read Later</h5>
+  <div *ngIf="dData.length == 0" class="my-5">
+    <h4 class="justfy-content-center">No News marked for read later</h4>
+  </div>
+  <div *ngFor="let item of dData" class="specifics">
+    <div class="card mb-3">
+      <div class="row g-0">
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title" [routerLink]="['/view-news', item.title]">
+              {{ item.title }}
+            </h5>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <img
+            src="{{ item.urlToImage }}"
+            class="img-fluid rounded-start"
+            alt="..."
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
