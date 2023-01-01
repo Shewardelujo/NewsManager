@@ -13,13 +13,11 @@ import { SearchResultsComponent } from './pages/search-results/search-results.co
 import { SportsComponent } from './pages/sports/sports.component';
 import { TechnologyComponent } from './pages/technology/technology.component';
 import { TopStoriesComponent } from './pages/top-stories/top-stories.component';
-import { ViewNewsComponent } from './pages/view-news/view-news.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'top-stories', component: TopStoriesComponent },
-  { path: 'view-news/:title', component: ViewNewsComponent },
   { path: 'business', component: BusinessComponent },
   { path: 'entertainment', component: EntertainmentComponent },
   { path: 'general', component: GeneralComponent },

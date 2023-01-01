@@ -1,9 +1,18 @@
 <div class="card h-100">
   <img src="{{ item.urlToImage }}" class="card-img-top" alt="..." />
   <div class="card-body">
-    <h5 class="card-title" [routerLink]="['/view-news', item.title]">
-      {{ item.title }}
+    <p class="text-muted mb-1">
+      {{ item.source.name }}
+    </p>
+    <h5 class="card-title">
+      <a
+        href="{{ item.url }}"
+        class="text-dark text-decoration-none text-underline-hover"
+      >
+        {{ item.title | truncate }}
+      </a>
     </h5>
+
     <p class="card-text">{{ item.title }}</p>
     <p class="card-text my-3 text-muted">
       {{ item.publishedAt | date : "medium" }}

@@ -13,12 +13,17 @@
       <div class="row g-0">
         <div class="col-md-5">
           <div class="card-body">
-            <h5
-              class="card-title"
-              [routerLink]="['/view-news', firstData.title]"
-            >
-              {{ firstData.title }}
+            <p class="text-muted mb-1">
+              {{ firstData.source.name }}
+            </p>
+            <h5 class="card-title">
+              <a
+                href="{{ firstData.url }}"
+                class="text-dark text-decoration-none text-underline-hover"
+                >{{ firstData.title }}</a
+              >
             </h5>
+
             <p class="card-text">
               {{ firstData.description }}
             </p>
