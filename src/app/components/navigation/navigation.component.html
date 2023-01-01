@@ -75,22 +75,38 @@
           </ul>
         </li>
       </ul>
-      <form
+      <!-- <form
         class="d-flex"
         role="search"
         #myForm="ngForm"
         (ngSubmit)="newsSearch()"
       >
         <input
-          class="form-control me-2"
+          class="me-3 input-area px-3"
           type="search"
-          placeholder="Search"
           aria-label="Search"
           name="news"
           [(ngModel)]="form.searchInput"
           #news="ngModel"
         />
         <button class="btn btn-outline-success" type="submit">Search</button>
+      </form> -->
+      <form #myForm="ngForm" (ngSubmit)="newsSearch()">
+        <div class="d-flex justify-content-between input-field">
+          <div class="col-9 d-flex align-items-center py-2">
+            <span class="mx-3">
+              <i class="fa-solid fa-magnifying-glass mute-color"></i>
+            </span>
+            <input
+              class="w-75 input-area bg-light"
+              type="text"
+              placeholder="Search for a topic..."
+              name="task"
+              [(ngModel)]="form.searchInput"
+              #task="ngModel"
+            />
+          </div>
+        </div>
       </form>
     </div>
   </div>

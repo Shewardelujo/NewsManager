@@ -1,5 +1,5 @@
 <div class="col-12 container">
-  <h5 class="mt-4 mb-3" *ngIf="dData.length !== 0">Read Later</h5>
+  <h4 class="mt-4 mb-3" *ngIf="dData.length !== 0">Read Later</h4>
   <div *ngIf="dData.length == 0" class="my-5">
     <h4 class="justfy-content-center">No News marked for read later</h4>
   </div>
@@ -27,6 +27,7 @@
         <div class="col-md-4">
           <img
             src="{{ item.urlToImage }}"
+            onerror="this.src='assets/Images/newsIm.jpg';"
             class="img-fluid rounded-start"
             alt="..."
           />

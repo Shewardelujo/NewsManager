@@ -5,7 +5,7 @@
   <!-- Section 1 beginning -->
 
   <div class="col-xs-12 col-md-8">
-    <h5 class="mt-4 mb-3">Top Headlines</h5>
+    <h3 class="mt-4 mb-3">Top Headlines</h3>
 
     <!-- First item -->
 
@@ -40,6 +40,7 @@
         <div class="col-md-7">
           <img
             src="{{ firstData.urlToImage }}"
+            onerror="this.src='assets/Images/newsIm.jpg';"
             class="img-fluid rounded-end"
             alt="..."
           />
@@ -58,7 +59,7 @@
 
   <!-- Section 2 beginning -->
   <div class="col-xs-12 col-md-3">
-    <h5 class="mt-4 mb-3">Bitcoin News</h5>
+    <h4 class="mt-4 mb-3">Bitcoin News</h4>
     <!-- <div *ngFor="let item of Data"> -->
     <div *ngFor="let item of bitData">
       <app-horizontal-card [item]="item"></app-horizontal-card>
@@ -69,45 +70,45 @@
 
 <!-- Section 3 -->
 <div class="col-12 mt-3 px-5">
-  <h5 class="mt-4 mb-3 col-12">Categories</h5>
+  <h3 class="mt-4 mb-4 col-12">Recommended topics for you</h3>
   <div class="row">
     <div class="col-md-4 mr-2">
-      <h5>Science</h5>
+      <h4 class="mb-4">Science</h4>
       <!-- <div *ngFor="let item of Data"> -->
       <div *ngFor="let item of scienceData">
         <app-horizontal-card [item]="item"></app-horizontal-card>
       </div>
     </div>
     <div class="col-md-4 mr-2">
-      <h5>Technology</h5>
+      <h4 class="mb-4">Technology</h4>
       <!-- <div *ngFor="let item of Data"> -->
       <div *ngFor="let item of technologyData">
         <app-horizontal-card [item]="item"></app-horizontal-card>
       </div>
     </div>
     <div class="col-md-4 mr-2">
-      <h5>Business</h5>
+      <h4 class="mb-4">Business</h4>
       <!-- <div *ngFor="let item of Data"> -->
       <div *ngFor="let item of businessData">
         <app-horizontal-card [item]="item"></app-horizontal-card>
       </div>
     </div>
-    <div class="col-md-4 mr-2">
-      <h5>Sports</h5>
+    <div class="col-md-4 mr-2 mt-4">
+      <h4 class="mb-4">Sports</h4>
       <!-- <div *ngFor="let item of Data"> -->
       <div *ngFor="let item of sportsData">
         <app-horizontal-card [item]="item"></app-horizontal-card>
       </div>
     </div>
-    <div class="col-md-4 mr-2">
-      <h5>Entertainment</h5>
+    <div class="col-md-4 mr-2 mt-4">
+      <h4 class="mb-4">Entertainment</h4>
       <!-- <div *ngFor="let item of Data"> -->
       <div *ngFor="let item of entertainmentData">
         <app-horizontal-card [item]="item"></app-horizontal-card>
       </div>
     </div>
-    <div class="col-md-4 mr-2">
-      <h5>Health</h5>
+    <div class="col-md-4 mr-2 mt-4">
+      <h4 class="mb-4">Health</h4>
       <!-- <div *ngFor="let item of Data"> -->
       <div *ngFor="let item of healthData">
         <app-horizontal-card [item]="item"></app-horizontal-card>
