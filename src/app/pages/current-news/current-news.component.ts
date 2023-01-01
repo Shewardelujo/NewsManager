@@ -9,8 +9,7 @@ import { dData } from 'src/app/dummydata/ddata';
 export class CurrentNewsComponent implements OnInit {
   totalList: any = [];
   currentList: any = [];
-  timeUp!: Date;
-
+  previousDay!: any;
   dData!: any;
 
   constructor() {}
@@ -18,23 +17,22 @@ export class CurrentNewsComponent implements OnInit {
   ngOnInit(): void {
     this.totalList = JSON.parse(localStorage.getItem('totalList') || '[]');
 
-    // console.log('this.totalList :>> ', this.totalList);
-    this.timeUp = new Date();
-
-    this.getCurrentNews();
-  }
-
-  dueDate(date: any) {
-    return new Date(date);
-  }
-
-  getCurrentNews() {
-    this.currentList = this.totalList.filter((news: dData) => {
-      // console.log('news.publishedAt :>> ', new Date(news.publishedAt));
-      new Date(news.publishedAt) == new Date();
+    this.totalList.map((news: dData) => {
+      if (
+        Number(new Date(news.publishedAt)) - Number(this.getPreviousDay()) >
+        0
+      ) {
+        this.currentList = [...this.currentList, news];
+      }
     });
-    // console.log('this.totalList :>> ', this.totalList);
 
-    // console.log('this.currentList :>> ', this.currentList);
+    console.log('this.currentList :>> ', this.currentList);
+  }
+
+  //setDate and getDate are properties that can be called on new Date()
+  getPreviousDay(date: any = new Date()): any {
+    const previous = date.setDate(date.getDate() - 1);
+
+    return previous;
   }
 }

@@ -1,5 +1,11 @@
 <div class="col-12 container">
-  <h5 class="mt-4 mb-3">Old News</h5>
+  <h5 class="mt-4 mb-3" *ngIf="oldList.length !== 0">Old News</h5>
+  <p *ngIf="oldList.length !== 0">
+    Shows news published more than 24 hours ago
+  </p>
+  <div *ngIf="oldList.length == 0" class="my-5">
+    <h4 class="justfy-content-center">No Old News</h4>
+  </div>
   <div *ngFor="let item of oldList" class="specifics">
     <app-horizontal-page-card
       [item]="item"
