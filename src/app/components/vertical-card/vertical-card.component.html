@@ -1,5 +1,10 @@
 <div class="card h-100">
-  <img src="{{ item.urlToImage }}" class="card-img-top" alt="..." />
+  <img
+    src="{{ item.urlToImage }}"
+    onerror="this.src='assets/Images/newsIm.jpg';"
+    class="card-img-top"
+    alt="..."
+  />
   <div class="card-body">
     <p class="text-muted mb-1">
       {{ item.source.name }}
