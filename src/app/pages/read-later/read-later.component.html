@@ -8,9 +8,17 @@
       <div class="row g-0">
         <div class="col-md-8">
           <div class="card-body">
-            <h5 class="card-title" [routerLink]="['/view-news', item.title]">
-              {{ item.title }}
+            <p class="text-muted mb-1">
+              {{ item.source.name }}
+            </p>
+            <h5 class="card-title">
+              <a
+                href="{{ item.url }}"
+                class="text-dark text-decoration-none text-underline-hover"
+                >{{ item.title }}</a
+              >
             </h5>
+
             <p class="card-text my-3 text-muted">
               {{ item.publishedAt | date : "medium" }}
             </p>

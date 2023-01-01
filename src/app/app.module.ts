@@ -21,7 +21,6 @@ import { SportsComponent } from './pages/sports/sports.component';
 import { TruncatePipe } from './pipe/transform.pipe';
 import { HorizontalPageCardComponent } from './components/horizontal-page-card/horizontal-page-card.component';
 import { ReadLaterComponent } from './pages/read-later/read-later.component';
-import { ViewNewsComponent } from './pages/view-news/view-news.component';
 import { FormsModule } from '@angular/forms';
 import { SearchResultsComponent } from './pages/search-results/search-results.component';
 import { CurrentNewsComponent } from './pages/current-news/current-news.component';
@@ -46,7 +45,6 @@ import { OldNewsComponent } from './pages/old-news/old-news.component';
     TruncatePipe,
     HorizontalPageCardComponent,
     ReadLaterComponent,
-    ViewNewsComponent,
     SearchResultsComponent,
     CurrentNewsComponent,
     OldNewsComponent,

@@ -21,6 +21,10 @@
 //     thumbnailUrl: 'https://via.placeholder.com/150/24f355',
 //   },
 // ];
+export interface source {
+  id: any;
+  name: string;
+}
 
 export interface dData {
   id?: number;
@@ -30,7 +34,7 @@ export interface dData {
   content: string;
   description: string;
   publishedAt: string;
-  source: {};
+  source: source;
   url: string;
   urlToImage: string;
 }
