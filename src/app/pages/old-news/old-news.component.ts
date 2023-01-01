@@ -10,29 +10,30 @@ export class OldNewsComponent implements OnInit {
   totalList: any = [];
   oldList: any = [];
   dData!: any;
-  timeUp!: Date;
+  previousDay!: any;
 
   constructor() {}
 
   ngOnInit(): void {
     this.totalList = JSON.parse(localStorage.getItem('totalList') || '[]');
 
-    console.log('this.totalList :>> ', this.totalList);
-    this.timeUp = new Date();
-
-    this.getOldNews();
-  }
-
-  dueDate(date: any) {
-    return new Date(date);
-  }
-  getOldNews() {
-    this.oldList = this.totalList.filter((news: dData) => {
-      // this.dueDate(news.publishedAt) <= this.timeUp;
-      new Date(news.publishedAt) != new Date();
+    this.totalList.map((news: dData) => {
+      if (
+        Number(new Date(news.publishedAt)) - Number(this.getPreviousDay()) <=
+        0
+      ) {
+        this.oldList = [...this.oldList, news];
+      }
     });
-    console.log('this.totalList :>> ', this.totalList);
 
     console.log('this.oldList :>> ', this.oldList);
+  }
+
+  //setDate and getDate are properties that can be called on new Date()
+
+  getPreviousDay(date: any = new Date()): any {
+    const previous = date.setDate(date.getDate() - 1);
+
+    return previous;
   }
 }

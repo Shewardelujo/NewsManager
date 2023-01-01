@@ -1,5 +1,11 @@
 <div class="col-12 container">
-  <h5 class="mt-4 mb-3">Current News</h5>
+  <h5 class="mt-4 mb-3" *ngIf="currentList.length !== 0">Current News</h5>
+  <p *ngIf="currentList.length !== 0">
+    Shows only news published in the last 24 hours
+  </p>
+  <div *ngIf="currentList.length == 0" class="my-5">
+    <h4 class="justfy-content-center">No Old News</h4>
+  </div>
   <div *ngFor="let item of currentList" class="specifics">
     <app-horizontal-page-card
       [item]="item"
