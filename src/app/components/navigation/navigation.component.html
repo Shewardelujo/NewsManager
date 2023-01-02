@@ -1,93 +1,90 @@
 <nav class="navbar navbar-expand-lg btnColorr px-3 py-4">
   <img src="assets/Images/apple-touch-icon.png" class="sizing" />
 
-  <div class="container-fluid">
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active text-white" aria-current="page" href="#"
-            >Home</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" [routerLink]="['/top-stories']"
-            >Top Stories</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" [routerLink]="['/read-later']"
-            >Read Later</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" [routerLink]="['/current-news']"
-            >Current News</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" [routerLink]="['/old-news']"
-            >Old News</a
-          >
-        </li>
+  <button
+    class="navbar-toggler togglerColor"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <a class="nav-link active text-white" aria-current="page" href="#"
+          >Home</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" [routerLink]="['/top-stories']"
+          >Top Stories</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" [routerLink]="['/read-later']"
+          >Read Later</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" [routerLink]="['/current-news']"
+          >Current News</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" [routerLink]="['/old-news']">Old News</a>
+      </li>
 
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link text-white dropdown-toggle"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Categories
-          </a>
-          <ul class="dropdown-menu">
-            <li>
-              <a class="dropdown-item" [routerLink]="['/health']">Health</a>
-            </li>
-            <hr class="dropdown-divider" />
-            <li>
-              <a class="dropdown-item" [routerLink]="['/entertainment']"
-                >Entertainment</a
-              >
-            </li>
-            <hr class="dropdown-divider" />
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link text-white dropdown-toggle"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Categories
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a class="dropdown-item" [routerLink]="['/health']">Health</a>
+          </li>
+          <hr class="dropdown-divider" />
+          <li>
+            <a class="dropdown-item" [routerLink]="['/entertainment']"
+              >Entertainment</a
+            >
+          </li>
+          <hr class="dropdown-divider" />
 
-            <li>
-              <a class="dropdown-item" [routerLink]="['/business']">Business</a>
-            </li>
-            <hr class="dropdown-divider" />
-            <li>
-              <a class="dropdown-item" [routerLink]="['/technology']"
-                >Technology</a
-              >
-            </li>
-            <hr class="dropdown-divider" />
-            <li>
-              <a class="dropdown-item" [routerLink]="['/general']">General</a>
-            </li>
-            <hr class="dropdown-divider" />
-            <li>
-              <a class="dropdown-item" [routerLink]="['/science']">Science</a>
-            </li>
-            <hr class="dropdown-divider" />
-            <li>
-              <a class="dropdown-item" [routerLink]="['/sports']">Sports</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <!-- <form
+          <li>
+            <a class="dropdown-item" [routerLink]="['/business']">Business</a>
+          </li>
+          <hr class="dropdown-divider" />
+          <li>
+            <a class="dropdown-item" [routerLink]="['/technology']"
+              >Technology</a
+            >
+          </li>
+          <hr class="dropdown-divider" />
+          <li>
+            <a class="dropdown-item" [routerLink]="['/general']">General</a>
+          </li>
+          <hr class="dropdown-divider" />
+          <li>
+            <a class="dropdown-item" [routerLink]="['/science']">Science</a>
+          </li>
+          <hr class="dropdown-divider" />
+          <li>
+            <a class="dropdown-item" [routerLink]="['/sports']">Sports</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <!-- <form
         class="d-flex"
         role="search"
         #myForm="ngForm"
@@ -103,23 +100,22 @@
         />
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form> -->
-      <form #myForm="ngForm" (ngSubmit)="newsSearch()">
-        <div class="d-flex justify-content-between input-field">
-          <div class="col-9 d-flex align-items-center py-2">
-            <span class="mx-3">
-              <i class="fa-solid fa-magnifying-glass mute-color"></i>
-            </span>
-            <input
-              class="w-75 input-area"
-              type="text"
-              placeholder="Search for a topic..."
-              name="task"
-              [(ngModel)]="form.searchInput"
-              #task="ngModel"
-            />
-          </div>
+    <form #myForm="ngForm" (ngSubmit)="newsSearch()">
+      <div class="d-flex justify-content-between input-field">
+        <div class="col-9 d-flex align-items-center py-2">
+          <span class="mx-3">
+            <i class="fa-solid fa-magnifying-glass mute-color"></i>
+          </span>
+          <input
+            class="w-75 input-area"
+            type="text"
+            placeholder="Search for a topic..."
+            name="task"
+            [(ngModel)]="form.searchInput"
+            #task="ngModel"
+          />
         </div>
-      </form>
-    </div>
+      </div>
+    </form>
   </div>
 </nav>
