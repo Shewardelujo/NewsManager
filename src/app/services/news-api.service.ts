@@ -1,18 +1,12 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { dData } from '../dummydata/ddata';
 
 @Injectable({
   providedIn: 'root',
 })
 export class NewsApiService {
-  // public topHeadline!: BehaviorSubject<dData[]>;
-
-  constructor(private http: HttpClient) {
-    // this.topHeadline = new BehaviorSubject<dData[]>([]);
-  }
+  constructor(private http: HttpClient) {}
 
   //  topHeadlinesUrl
 
@@ -30,9 +24,6 @@ export class NewsApiService {
     return this.http.get<any>(this.topHeadlinesUrl);
   }
 
-  // get getTopHeadlines(): Observable<dData[]> {
-  //   return this.topHeadline.asObservable();
-  // }
   //category()
   category(query: string) {
     return this.http.get<any>(

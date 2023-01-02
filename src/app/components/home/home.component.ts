@@ -45,9 +45,7 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // if (localStorage.getItem('totalList') == null) {
     localStorage.setItem('totalList', JSON.stringify([]));
-    // }
 
     if (localStorage.getItem('readLaterList') == null) {
       localStorage.setItem('readLaterList', JSON.stringify([]));

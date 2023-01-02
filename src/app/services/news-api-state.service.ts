@@ -17,11 +17,8 @@ export class NewsApiStateService {
   public healthData!: BehaviorSubject<dData[]>;
   public readLater!: BehaviorSubject<dData[]>;
   public searchResults!: BehaviorSubject<dData[]>;
-  // public totalList!: BehaviorSubject<dData[]>;
 
   readLaterList!: dData[];
-
-  // totalList!: dData[];
 
   constructor() {
     const storedNews = localStorage.getItem('readLaterList');
@@ -46,9 +43,6 @@ export class NewsApiStateService {
     this.searchResults = new BehaviorSubject<dData[]>([]);
 
     this.readLater = new BehaviorSubject<dData[]>(this.readLaterList || []);
-    // this.totalList = new BehaviorSubject<dData[]>([]);
-
-    // this.totalList = this.topHeadline.concat(this.scienceData, this.bitData);
   }
 
   get getReadLater(): Observable<dData[]> {
@@ -58,9 +52,6 @@ export class NewsApiStateService {
   setReadLater(readLater: dData[]) {
     this.readLater.next(readLater);
     localStorage.setItem('readLaterList', JSON.stringify(readLater));
-    // this.totalList = [...this.totalList, readLater]
-
-    // console.log('readLater', readLater);
   }
 
   get getTopHeadlines(): Observable<dData[]> {
