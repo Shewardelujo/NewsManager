@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { dData } from 'src/app/dummydata/ddata';
 import { NewsApiStateService } from 'src/app/services/news-api-state.service';
 import { NewsApiService } from 'src/app/services/news-api.service';
+import { SnackBarComponent } from '../snack-bar/snack-bar.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +11,8 @@ import { NewsApiService } from 'src/app/services/news-api.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  category = 'bitcoin';
+  durationInSeconds = 5;
+  category!: string;
   firstData!: any;
   scienceData!: any;
   bitData!: any;
@@ -22,10 +25,23 @@ export class HomeComponent implements OnInit {
   readLaterList!: dData[];
 
   totalList: any = [];
+  conditionalRender: string[] = [
+    'Bitcoin',
+    'Fashion',
+    'Medical',
+    'Football',
+    'Celebrity',
+    'Tourism',
+    'Political',
+    'Investigation',
+    'Historical',
+    'Trending',
+  ];
 
   constructor(
     private api: NewsApiService,
-    private apiState: NewsApiStateService
+    private apiState: NewsApiStateService,
+    private _snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -37,14 +53,10 @@ export class HomeComponent implements OnInit {
       localStorage.setItem('readLaterList', JSON.stringify([]));
     }
 
-    //TOP HEADLINES
-    // this.apiState.getTopHeadlines.subscribe((res) => {
-    //   console.log('res', res);
-    //   this.Data = res;
-    // localStorage.setItem('totalList', JSON.stringify(this.Data));
-
-    //   console.log('this.Data', this.Data);
-    // });
+    this.category =
+      this.conditionalRender[
+        Math.floor(Math.random() * this.conditionalRender.length)
+      ];
 
     //TOP HEADLINES;
     this.api.topHeadlines().subscribe((data) => {
@@ -160,5 +172,12 @@ export class HomeComponent implements OnInit {
       this.readLaterList = [...this.readLaterList, item];
     }
     this.apiState.setReadLater(this.readLaterList);
+  }
+
+  openSnackBar() {
+    this.storeNews(this.firstData);
+    this._snackBar.openFromComponent(SnackBarComponent, {
+      duration: this.durationInSeconds * 1000,
+    });
   }
 }
