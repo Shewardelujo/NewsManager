@@ -25,8 +25,6 @@ export class OldNewsComponent implements OnInit {
         this.oldList = [...this.oldList, news];
       }
     });
-
-    console.log('this.oldList :>> ', this.oldList);
   }
 
   //setDate and getDate are properties that can be called on new Date()

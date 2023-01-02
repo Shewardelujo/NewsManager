@@ -25,8 +25,6 @@ export class CurrentNewsComponent implements OnInit {
         this.currentList = [...this.currentList, news];
       }
     });
-
-    console.log('this.currentList :>> ', this.currentList);
   }
 
   //setDate and getDate are properties that can be called on new Date()
