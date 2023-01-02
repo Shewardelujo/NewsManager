@@ -14,7 +14,6 @@ export class BusinessComponent implements OnInit {
   ngOnInit(): void {
     this.apiState.getBusinessDataList.subscribe((res) => {
       this.dData = res;
-      console.log(res);
     });
   }
 }

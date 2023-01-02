@@ -70,7 +70,6 @@ export class HomeComponent implements OnInit {
         localStorage.setItem('totalList', JSON.stringify(updatedTotalList));
       }
 
-      console.log(data.articles);
     });
 
     //BITCOIN

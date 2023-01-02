@@ -21,13 +21,10 @@ export class GeneralComponent implements OnInit {
   generalApiCall = () => {
     this.api.category(this.category).subscribe((data) => {
       this.dData = data.articles;
-      console.log(data.articles);
       const totalList = localStorage.getItem('totalList');
       if (totalList != null) {
         const list = JSON.parse(totalList);
-        console.log('this.dData :>> ', this.dData);
         let updatedTotalList = [...list, ...data.articles];
-        console.log('typeof updatedTotalList :>> ', typeof updatedTotalList);
         localStorage.setItem('totalList', JSON.stringify(updatedTotalList));
       }
     });

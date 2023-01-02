@@ -24,7 +24,6 @@ export class NewsApiStateService {
     const storedNews = localStorage.getItem('readLaterList');
     if (storedNews != null) {
       const list = JSON.parse(storedNews);
-      console.log(list);
       this.readLaterList = list;
     } else {
       localStorage.setItem('readLaterList', JSON.stringify([]));
