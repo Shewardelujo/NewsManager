@@ -9,6 +9,8 @@ import { NewsApiStateService } from 'src/app/services/news-api-state.service';
 })
 export class HorizontalCardComponent implements OnInit {
   @Input() item!: dData;
+  btnText: string = 'Read Later';
+
   readLaterList!: dData[];
 
   constructor(private apiState: NewsApiStateService) {}
@@ -16,10 +18,10 @@ export class HorizontalCardComponent implements OnInit {
   ngOnInit(): void {}
 
   storeNews(item: dData) {
-    console.log('item', item);
+    this.btnText = 'To be Read Later..';
+
     this.apiState.getReadLater.subscribe((res) => {
       this.readLaterList = res;
-      console.log('res', res);
     });
     const preExistingReadL = this.readLaterList.find(
       (readL) => readL.title === item.title
