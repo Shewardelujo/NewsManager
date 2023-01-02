@@ -11,6 +11,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  btnText: string = 'Read Later';
   durationInSeconds = 5;
   category!: string;
   firstData!: any;
@@ -157,10 +158,9 @@ export class HomeComponent implements OnInit {
   }
 
   storeNews(item: dData) {
-    console.log('item', item);
+    this.btnText = 'To be Read Later..';
     this.apiState.getReadLater.subscribe((res) => {
       this.readLaterList = res;
-      console.log('res', res);
     });
     const preExistingReadL = this.readLaterList.find(
       (readL) => readL.title === item.title
