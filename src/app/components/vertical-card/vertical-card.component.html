@@ -20,10 +20,10 @@
 
     <p class="card-text">{{ item.title }}</p>
     <p class="card-text my-3 text-muted">
-      {{ item.publishedAt | date : "medium" }}
+      {{ item.publishedAt | date : "short" }}
     </p>
   </div>
   <div class="card-footer bg-white border-top-0">
-    <a class="btn btn-primary mb-2" (click)="storeNews(item)">Read Later </a>
+    <a class="btn mb-2 btnColor" (click)="storeNews(item)">Read Later </a>
   </div>
 </div>

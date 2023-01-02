@@ -29,12 +29,13 @@
             </p>
 
             <p class="card-text my-3 text-muted">
-              {{ firstData.publishedAt | date : "medium" }}
+              {{ firstData.publishedAt | date : "short" }}
             </p>
 
-            <a class="btn btn-primary" (click)="storeNews(firstData)"
+            <a class="btn btnColor" (click)="storeNews(firstData)"
               >Read Later
             </a>
+            <!-- <a class="btn btnColor" (click)="openSnackBar()"> Read Later </a> -->
           </div>
         </div>
         <div class="col-md-7">
@@ -59,7 +60,7 @@
 
   <!-- Section 2 beginning -->
   <div class="col-xs-12 col-md-3">
-    <h4 class="mt-4 mb-3">Bitcoin News</h4>
+    <h4 class="mt-4 mb-3">{{ category }} News</h4>
     <!-- <div *ngFor="let item of Data"> -->
     <div *ngFor="let item of bitData">
       <app-horizontal-card [item]="item"></app-horizontal-card>

@@ -12,6 +12,8 @@
 
 .input-area {
     border: none;
+    background-color: rgb(86, 24, 24);
+    color: white;
 }
 
 .input-area:focus {
@@ -19,4 +21,8 @@
 }
 .mute-color{
     color:  #8b8b8b;
+}
+.sizing {
+    width: 40px;
+    height: 40px;
 }

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +26,8 @@ import { FormsModule } from '@angular/forms';
 import { SearchResultsComponent } from './pages/search-results/search-results.component';
 import { CurrentNewsComponent } from './pages/current-news/current-news.component';
 import { OldNewsComponent } from './pages/old-news/old-news.component';
+import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -48,8 +51,16 @@ import { OldNewsComponent } from './pages/old-news/old-news.component';
     SearchResultsComponent,
     CurrentNewsComponent,
     OldNewsComponent,
+    SnackBarComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    MatSnackBarModule,
+    BrowserAnimationsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
