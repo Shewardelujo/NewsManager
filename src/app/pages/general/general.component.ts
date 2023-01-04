@@ -11,6 +11,7 @@ export class GeneralComponent implements OnInit {
   category = 'general';
   dData!: dData[];
   totalList: any = [];
+  showDataSpinner = true;
 
   constructor(private api: NewsApiService) {}
 
@@ -20,6 +21,8 @@ export class GeneralComponent implements OnInit {
 
   generalApiCall = () => {
     this.api.category(this.category).subscribe((data) => {
+      this.showDataSpinner = false;
+
       this.dData = data.articles;
       const totalList = localStorage.getItem('totalList');
       if (totalList != null) {

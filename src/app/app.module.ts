@@ -28,6 +28,7 @@ import { CurrentNewsComponent } from './pages/current-news/current-news.componen
 import { OldNewsComponent } from './pages/old-news/old-news.component';
 import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     CurrentNewsComponent,
     OldNewsComponent,
     SnackBarComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,

@@ -38,6 +38,14 @@ export class HomeComponent implements OnInit {
     'Historical',
     'Trending',
   ];
+  showDataSpinner = true;
+  showBitSpinner = true;
+  showScienceSpinner = true;
+  showTechnologySpinner = true;
+  showBusinessSpinner = true;
+  showSportsSpinner = true;
+  showEntertainmentSpinner = true;
+  showHealthSpinner = true;
 
   constructor(
     private api: NewsApiService,
@@ -59,6 +67,8 @@ export class HomeComponent implements OnInit {
 
     //TOP HEADLINES;
     this.api.topHeadlines().subscribe((data) => {
+      this.showDataSpinner = false;
+
       this.firstData = data.articles[0];
       this.Data = data.articles.slice(1, 4);
       this.apiState.setTopHeadlines(data.articles);
@@ -69,11 +79,12 @@ export class HomeComponent implements OnInit {
         let updatedTotalList = [...list, ...data.articles];
         localStorage.setItem('totalList', JSON.stringify(updatedTotalList));
       }
-
     });
 
     //BITCOIN
     this.api.search(this.category).subscribe((data) => {
+      this.showBitSpinner = false;
+
       this.bitData = data.articles.slice(0, 3);
       const totalList = localStorage.getItem('totalList');
       if (totalList != null) {
@@ -85,6 +96,8 @@ export class HomeComponent implements OnInit {
 
     //SCIENCE
     this.api.category('science').subscribe((data) => {
+      this.showScienceSpinner = false;
+
       this.scienceData = data.articles.slice(0, 3);
       const totalList = localStorage.getItem('totalList');
       if (totalList != null) {
@@ -97,6 +110,8 @@ export class HomeComponent implements OnInit {
 
     //TEC
     this.api.category('technology').subscribe((data) => {
+      this.showTechnologySpinner = false;
+
       this.technologyData = data.articles.slice(0, 3);
       const totalList = localStorage.getItem('totalList');
       if (totalList != null) {
@@ -109,6 +124,8 @@ export class HomeComponent implements OnInit {
 
     //BUSINESS
     this.api.category('business').subscribe((data) => {
+      this.showBusinessSpinner = false;
+
       this.businessData = data.articles.slice(0, 3);
       const totalList = localStorage.getItem('totalList');
       if (totalList != null) {
@@ -121,6 +138,8 @@ export class HomeComponent implements OnInit {
 
     //SPORTS
     this.api.category('sports').subscribe((data) => {
+      this.showSportsSpinner = false;
+
       this.sportsData = data.articles.slice(0, 3);
       const totalList = localStorage.getItem('totalList');
       if (totalList != null) {
@@ -133,6 +152,8 @@ export class HomeComponent implements OnInit {
 
     //ENTERTAINMENT
     this.api.category('entertainment').subscribe((data) => {
+      this.showEntertainmentSpinner = false;
+
       this.entertainmentData = data.articles.slice(0, 3);
       const totalList = localStorage.getItem('totalList');
       if (totalList != null) {
@@ -145,6 +166,8 @@ export class HomeComponent implements OnInit {
 
     //HEALTH
     this.api.category('health').subscribe((data) => {
+      this.showHealthSpinner = false;
+
       this.healthData = data.articles.slice(0, 3);
       const totalList = localStorage.getItem('totalList');
       if (totalList != null) {
