@@ -1,9 +1,12 @@
 <div class="col-12 container">
   <h4 class="mt-4 mb-3">General News</h4>
+  <app-spinner *ngIf="showDataSpinner"></app-spinner>
+
   <div *ngFor="let item of dData" class="specifics">
     <app-horizontal-page-card
       [item]="item"
       class="mb-4"
+      *ngIf="!showDataSpinner"
     ></app-horizontal-page-card>
   </div>
 </div>

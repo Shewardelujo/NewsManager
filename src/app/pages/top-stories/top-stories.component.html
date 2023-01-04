@@ -1,5 +1,8 @@
 <div class="col-12 container">
-  <h4 class="mt-4 mb-3">Top Stories</h4>
+  <h4 class="mt-4 mb-3" *ngIf="dData.length !== 0">Top Stories</h4>
+  <div *ngIf="dData.length == 0" class="my-5">
+    <h4 class="justfy-content-center">Top Stories not available</h4>
+  </div>
   <div *ngFor="let item of dData" class="specifics">
     <app-horizontal-page-card
       [item]="item"
