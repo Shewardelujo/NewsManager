@@ -66,117 +66,158 @@ export class HomeComponent implements OnInit {
       ];
 
     //TOP HEADLINES;
-    this.api.topHeadlines().subscribe((data) => {
-      this.showDataSpinner = false;
+    this.api.topHeadlines().subscribe(
+      (data) => {
+        this.showDataSpinner = false;
 
-      this.firstData = data.articles[0];
-      this.Data = data.articles.slice(1, 4);
-      this.apiState.setTopHeadlines(data.articles);
+        this.firstData = data.articles[0];
+        this.Data = data.articles.slice(1, 4);
+        this.apiState.setTopHeadlines(data.articles);
 
-      const totalList = localStorage.getItem('totalList');
-      if (totalList != null) {
-        const list = JSON.parse(totalList);
-        let updatedTotalList = [...list, ...data.articles];
-        localStorage.setItem('totalList', JSON.stringify(updatedTotalList));
+        const totalList = localStorage.getItem('totalList');
+        if (totalList != null) {
+          const list = JSON.parse(totalList);
+          let updatedTotalList = [...list, ...data.articles];
+          localStorage.setItem('totalList', JSON.stringify(updatedTotalList));
+        }
+      },
+      (err) => {
+        this.showDataSpinner = false;
       }
-    });
+    );
 
     //BITCOIN
-    this.api.search(this.category).subscribe((data) => {
-      this.showBitSpinner = false;
+    this.api.search(this.category).subscribe(
+      (data) => {
+        this.showBitSpinner = false;
 
-      this.bitData = data.articles.slice(0, 3);
-      const totalList = localStorage.getItem('totalList');
-      if (totalList != null) {
-        const list = JSON.parse(totalList);
-        let updatedTotalList = [...list, ...data.articles];
-        localStorage.setItem('totalList', JSON.stringify(updatedTotalList));
+        this.bitData = data.articles.slice(0, 3);
+        const totalList = localStorage.getItem('totalList');
+        if (totalList != null) {
+          const list = JSON.parse(totalList);
+          let updatedTotalList = [...list, ...data.articles];
+          localStorage.setItem('totalList', JSON.stringify(updatedTotalList));
+        }
+      },
+      (err) => {
+        this.showBitSpinner = false;
       }
-    });
+    );
 
     //SCIENCE
-    this.api.category('science').subscribe((data) => {
-      this.showScienceSpinner = false;
+    this.api.category('science').subscribe(
+      (data) => {
+        this.showScienceSpinner = false;
 
-      this.scienceData = data.articles.slice(0, 3);
-      const totalList = localStorage.getItem('totalList');
-      if (totalList != null) {
-        const list = JSON.parse(totalList);
-        let updatedTotalList = [...list, ...data.articles];
-        localStorage.setItem('totalList', JSON.stringify(updatedTotalList));
+        this.scienceData = data.articles.slice(0, 3);
+        const totalList = localStorage.getItem('totalList');
+        if (totalList != null) {
+          const list = JSON.parse(totalList);
+          let updatedTotalList = [...list, ...data.articles];
+          localStorage.setItem('totalList', JSON.stringify(updatedTotalList));
+        }
+        this.apiState.setScienceDataList(data.articles);
+      },
+
+      (err) => {
+        this.showScienceSpinner = false;
       }
-      this.apiState.setScienceDataList(data.articles);
-    });
+    );
 
     //TEC
-    this.api.category('technology').subscribe((data) => {
-      this.showTechnologySpinner = false;
+    this.api.category('technology').subscribe(
+      (data) => {
+        this.showTechnologySpinner = false;
 
-      this.technologyData = data.articles.slice(0, 3);
-      const totalList = localStorage.getItem('totalList');
-      if (totalList != null) {
-        const list = JSON.parse(totalList);
-        let updatedTotalList = [...list, ...data.articles];
-        localStorage.setItem('totalList', JSON.stringify(updatedTotalList));
+        this.technologyData = data.articles.slice(0, 3);
+        const totalList = localStorage.getItem('totalList');
+        if (totalList != null) {
+          const list = JSON.parse(totalList);
+          let updatedTotalList = [...list, ...data.articles];
+          localStorage.setItem('totalList', JSON.stringify(updatedTotalList));
+        }
+        this.apiState.setTechnologyDataList(data.articles);
+      },
+      (err) => {
+        this.showTechnologySpinner = false;
       }
-      this.apiState.setTechnologyDataList(data.articles);
-    });
+    );
 
     //BUSINESS
-    this.api.category('business').subscribe((data) => {
-      this.showBusinessSpinner = false;
+    this.api.category('business').subscribe(
+      (data) => {
+        this.showBusinessSpinner = false;
 
-      this.businessData = data.articles.slice(0, 3);
-      const totalList = localStorage.getItem('totalList');
-      if (totalList != null) {
-        const list = JSON.parse(totalList);
-        let updatedTotalList = [...list, ...data.articles];
-        localStorage.setItem('totalList', JSON.stringify(updatedTotalList));
+        this.businessData = data.articles.slice(0, 3);
+        const totalList = localStorage.getItem('totalList');
+        if (totalList != null) {
+          const list = JSON.parse(totalList);
+          let updatedTotalList = [...list, ...data.articles];
+          localStorage.setItem('totalList', JSON.stringify(updatedTotalList));
+        }
+        this.apiState.setBusinessDataList(data.articles);
+      },
+      (err) => {
+        this.showBusinessSpinner = false;
       }
-      this.apiState.setBusinessDataList(data.articles);
-    });
+    );
 
     //SPORTS
-    this.api.category('sports').subscribe((data) => {
-      this.showSportsSpinner = false;
+    this.api.category('sports').subscribe(
+      (data) => {
+        this.showSportsSpinner = false;
 
-      this.sportsData = data.articles.slice(0, 3);
-      const totalList = localStorage.getItem('totalList');
-      if (totalList != null) {
-        const list = JSON.parse(totalList);
-        let updatedTotalList = [...list, ...data.articles];
-        localStorage.setItem('totalList', JSON.stringify(updatedTotalList));
+        this.sportsData = data.articles.slice(0, 3);
+        const totalList = localStorage.getItem('totalList');
+        if (totalList != null) {
+          const list = JSON.parse(totalList);
+          let updatedTotalList = [...list, ...data.articles];
+          localStorage.setItem('totalList', JSON.stringify(updatedTotalList));
+        }
+        this.apiState.setSportsDataList(data.articles);
+      },
+      (err) => {
+        this.showSportsSpinner = false;
       }
-      this.apiState.setSportsDataList(data.articles);
-    });
+    );
 
     //ENTERTAINMENT
-    this.api.category('entertainment').subscribe((data) => {
-      this.showEntertainmentSpinner = false;
+    this.api.category('entertainment').subscribe(
+      (data) => {
+        this.showEntertainmentSpinner = false;
 
-      this.entertainmentData = data.articles.slice(0, 3);
-      const totalList = localStorage.getItem('totalList');
-      if (totalList != null) {
-        const list = JSON.parse(totalList);
-        let updatedTotalList = [...list, ...data.articles];
-        localStorage.setItem('totalList', JSON.stringify(updatedTotalList));
+        this.entertainmentData = data.articles.slice(0, 3);
+        const totalList = localStorage.getItem('totalList');
+        if (totalList != null) {
+          const list = JSON.parse(totalList);
+          let updatedTotalList = [...list, ...data.articles];
+          localStorage.setItem('totalList', JSON.stringify(updatedTotalList));
+        }
+        this.apiState.setEntertainmentDataList(data.articles);
+      },
+      (err) => {
+        this.showEntertainmentSpinner = false;
       }
-      this.apiState.setEntertainmentDataList(data.articles);
-    });
+    );
 
     //HEALTH
-    this.api.category('health').subscribe((data) => {
-      this.showHealthSpinner = false;
+    this.api.category('health').subscribe(
+      (data) => {
+        this.showHealthSpinner = false;
 
-      this.healthData = data.articles.slice(0, 3);
-      const totalList = localStorage.getItem('totalList');
-      if (totalList != null) {
-        const list = JSON.parse(totalList);
-        let updatedTotalList = [...list, ...data.articles];
-        localStorage.setItem('totalList', JSON.stringify(updatedTotalList));
+        this.healthData = data.articles.slice(0, 3);
+        const totalList = localStorage.getItem('totalList');
+        if (totalList != null) {
+          const list = JSON.parse(totalList);
+          let updatedTotalList = [...list, ...data.articles];
+          localStorage.setItem('totalList', JSON.stringify(updatedTotalList));
+        }
+        this.apiState.setHealthDataList(data.articles);
+      },
+      (err) => {
+        this.showHealthSpinner = false;
       }
-      this.apiState.setHealthDataList(data.articles);
-    });
+    );
   }
 
   storeNews(item: dData) {

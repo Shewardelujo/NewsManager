@@ -20,16 +20,21 @@ export class GeneralComponent implements OnInit {
   }
 
   generalApiCall = () => {
-    this.api.category(this.category).subscribe((data) => {
-      this.showDataSpinner = false;
+    this.api.category(this.category).subscribe(
+      (data) => {
+        this.showDataSpinner = false;
 
-      this.dData = data.articles;
-      const totalList = localStorage.getItem('totalList');
-      if (totalList != null) {
-        const list = JSON.parse(totalList);
-        let updatedTotalList = [...list, ...data.articles];
-        localStorage.setItem('totalList', JSON.stringify(updatedTotalList));
+        this.dData = data.articles;
+        const totalList = localStorage.getItem('totalList');
+        if (totalList != null) {
+          const list = JSON.parse(totalList);
+          let updatedTotalList = [...list, ...data.articles];
+          localStorage.setItem('totalList', JSON.stringify(updatedTotalList));
+        }
+      },
+      (err) => {
+        this.showDataSpinner = false;
       }
-    });
+    );
   };
 }
