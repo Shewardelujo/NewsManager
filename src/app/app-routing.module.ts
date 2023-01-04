@@ -15,8 +15,7 @@ import { TechnologyComponent } from './pages/technology/technology.component';
 import { TopStoriesComponent } from './pages/top-stories/top-stories.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'top-stories', component: TopStoriesComponent },
   { path: 'business', component: BusinessComponent },
   { path: 'entertainment', component: EntertainmentComponent },
