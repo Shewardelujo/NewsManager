@@ -28,7 +28,7 @@ export class NewsApiStateService {
     } else {
       localStorage.setItem('readLaterList', JSON.stringify([]));
     }
-    // CREATE A NEW BEHAVIOR SUBJECT WITH AN INITIAL TODO
+    // CREATE A NEW BEHAVIOR SUBJECT WITH AN INITIAL VALUE
 
     this.topHeadline = new BehaviorSubject<dData[]>([]);
 
