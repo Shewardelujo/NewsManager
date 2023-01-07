@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { dData } from 'src/app/dummydata/ddata';
 import { NewsApiStateService } from 'src/app/services/news-api-state.service';
 import { NewsApiService } from 'src/app/services/news-api.service';
-import { SnackBarComponent } from '../snack-bar/snack-bar.component';
+import { SnackBarComponent } from '../../components/snack-bar/snack-bar.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
