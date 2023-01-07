@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
-import { HomeComponent } from './components/home/home.component';
+import { HomeComponent } from './pages/home/home.component';
 import { VerticalCardComponent } from './components/vertical-card/vertical-card.component';
 import { HorizontalCardComponent } from './components/horizontal-card/horizontal-card.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -29,6 +29,7 @@ import { OldNewsComponent } from './pages/old-news/old-news.component';
 import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { HorizontalCardPlaceholderComponent } from './components/placeholders/horizontal-card-placeholder/horizontal-card-placeholder.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     OldNewsComponent,
     SnackBarComponent,
     SpinnerComponent,
+    HorizontalCardPlaceholderComponent,
   ],
   imports: [
     BrowserModule,
