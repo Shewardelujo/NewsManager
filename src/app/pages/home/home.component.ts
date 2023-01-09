@@ -66,8 +66,8 @@ export class HomeComponent implements OnInit {
       ];
 
     //TOP HEADLINES;
-    this.api.topHeadlines().subscribe(
-      (data) => {
+    this.api.topHeadlines().subscribe({
+      next: (data) => {
         this.showDataSpinner = false;
 
         this.firstData = data.articles[0];
@@ -81,14 +81,14 @@ export class HomeComponent implements OnInit {
           localStorage.setItem('totalList', JSON.stringify(updatedTotalList));
         }
       },
-      (err) => {
+      error: (err) => {
         this.showDataSpinner = false;
-      }
-    );
+      },
+    });
 
     //BITCOIN
-    this.api.search(this.category).subscribe(
-      (data) => {
+    this.api.search(this.category).subscribe({
+      next: (data) => {
         this.showBitSpinner = false;
 
         this.bitData = data.articles.slice(0, 3);
@@ -99,14 +99,14 @@ export class HomeComponent implements OnInit {
           localStorage.setItem('totalList', JSON.stringify(updatedTotalList));
         }
       },
-      (err) => {
+      error: (err) => {
         this.showBitSpinner = false;
-      }
-    );
+      },
+    });
 
     //SCIENCE
-    this.api.category('science').subscribe(
-      (data) => {
+    this.api.category('science').subscribe({
+      next: (data) => {
         this.showScienceSpinner = false;
 
         this.scienceData = data.articles.slice(0, 3);
@@ -119,14 +119,14 @@ export class HomeComponent implements OnInit {
         this.apiState.setScienceDataList(data.articles);
       },
 
-      (err) => {
+      error: (err) => {
         this.showScienceSpinner = false;
-      }
-    );
+      },
+    });
 
     //TEC
-    this.api.category('technology').subscribe(
-      (data) => {
+    this.api.category('technology').subscribe({
+      next: (data) => {
         this.showTechnologySpinner = false;
 
         this.technologyData = data.articles.slice(0, 3);
@@ -138,14 +138,14 @@ export class HomeComponent implements OnInit {
         }
         this.apiState.setTechnologyDataList(data.articles);
       },
-      (err) => {
+      error: (err) => {
         this.showTechnologySpinner = false;
-      }
-    );
+      },
+    });
 
     //BUSINESS
-    this.api.category('business').subscribe(
-      (data) => {
+    this.api.category('business').subscribe({
+      next: (data) => {
         this.showBusinessSpinner = false;
 
         this.businessData = data.articles.slice(0, 3);
@@ -157,14 +157,14 @@ export class HomeComponent implements OnInit {
         }
         this.apiState.setBusinessDataList(data.articles);
       },
-      (err) => {
+      error: (err) => {
         this.showBusinessSpinner = false;
-      }
-    );
+      },
+    });
 
     //SPORTS
-    this.api.category('sports').subscribe(
-      (data) => {
+    this.api.category('sports').subscribe({
+      next: (data) => {
         this.showSportsSpinner = false;
 
         this.sportsData = data.articles.slice(0, 3);
@@ -176,14 +176,14 @@ export class HomeComponent implements OnInit {
         }
         this.apiState.setSportsDataList(data.articles);
       },
-      (err) => {
+      error: (err) => {
         this.showSportsSpinner = false;
-      }
-    );
+      },
+    });
 
     //ENTERTAINMENT
-    this.api.category('entertainment').subscribe(
-      (data) => {
+    this.api.category('entertainment').subscribe({
+      next: (data) => {
         this.showEntertainmentSpinner = false;
 
         this.entertainmentData = data.articles.slice(0, 3);
@@ -195,14 +195,14 @@ export class HomeComponent implements OnInit {
         }
         this.apiState.setEntertainmentDataList(data.articles);
       },
-      (err) => {
+      error: (err) => {
         this.showEntertainmentSpinner = false;
-      }
-    );
+      },
+    });
 
     //HEALTH
-    this.api.category('health').subscribe(
-      (data) => {
+    this.api.category('health').subscribe({
+      next: (data) => {
         this.showHealthSpinner = false;
 
         this.healthData = data.articles.slice(0, 3);
@@ -214,10 +214,10 @@ export class HomeComponent implements OnInit {
         }
         this.apiState.setHealthDataList(data.articles);
       },
-      (err) => {
+      error: (err) => {
         this.showHealthSpinner = false;
-      }
-    );
+      },
+    });
   }
 
   storeNews(item: dData) {

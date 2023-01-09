@@ -20,8 +20,8 @@ export class GeneralComponent implements OnInit {
   }
 
   generalApiCall = () => {
-    this.api.category(this.category).subscribe(
-      (data) => {
+    this.api.category(this.category).subscribe({
+      next: (data) => {
         this.showDataSpinner = false;
 
         this.dData = data.articles;
@@ -32,9 +32,9 @@ export class GeneralComponent implements OnInit {
           localStorage.setItem('totalList', JSON.stringify(updatedTotalList));
         }
       },
-      (err) => {
+      error: (err) => {
         this.showDataSpinner = false;
-      }
-    );
+      },
+    });
   };
 }
